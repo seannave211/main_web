@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Space+Mono&display=swap");
+
+:root {
+    --ff: "Atkinson Hyperlegible Next", sans-serif;
+
+    --h1: bold 54px/60px var(--ff);
+    --h2: bold 36px/48px var(--ff);
+    --h3: bold 24px/36px var(--ff);
+
+    --bg-dark: oklch(0.92 0.025 210);
+    --bg: oklch(0.96 0.025 210);
+    --bg-light: oklch(1 0.025 210);
+    --text: oklch(0.15 0.05 210);
+    --text-muted: oklch(0.4 0.05 210);
+    --highlight: oklch(1 0.05 210);
+    --border: oklch(0.6 0.05 210);
+    --border-muted: oklch(0.7 0.05 210);
+    --primary: oklch(0.4 0.1 210);
+    --secondary: oklch(0.4 0.1 30);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
+    --shadow: 0px 2px 2px oklch(0 0 0 / 0.2), 0px 4px 4px oklch(0 0 0 / 0.1);
+
+    --border-card: solid 1px var(--bg);
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+    height: 100%;
+    font:
+        100%/1.5 "Atkinson Hyperlegible Next",
+        sans-serif;
+    word-wrap: break-word;
+    margin: 0 auto;
+    padding: 1.5em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    color: var(--text-muted);
+    background: var(--bg-dark);
+}
+
+button {
+    font: inherit;
+}
+
+h1 {
+    font: var(--h1);
+}
+h2 {
+    font: var(--h2);
+}
+h3 {
+    font: var(--h3);
+}
+
+.material-symbols-outlined {
+    font-size: 45px !important;
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 45;
+}
+
+.web_resource_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-content: center;
+}
+
+.card {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background: var(--bg);
+    position: relative;
+    box-shadow: var(--shadow);
+    min-width: 300px;
+    border: var(--border-card);
+    border-top: 2px solid var(--highlight);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card:hover {
+    background: var(--gradient-hover);
+}
+
+.update_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 125%;
+        max-width: 42em;
+    }
+}
