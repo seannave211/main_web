@@ -77,11 +77,14 @@ h3 {
 }
 
 .web_resource_grid {
+    --grid-min-col-size: 250px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(min(var(--grid-min-col-size), 100%), 1fr)
+    );
     gap: 1rem;
-    align-content: center;
+    width: 60%;
 }
 
 .card {
@@ -90,7 +93,6 @@ h3 {
     background: var(--bg);
     position: relative;
     box-shadow: var(--shadow);
-    min-width: 300px;
     border: var(--border-card);
     border-top: 2px solid var(--highlight);
     text-decoration: none;
@@ -98,6 +100,7 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -109,11 +112,4 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     font-size: 0.75rem;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 125%;
-        max-width: 42em;
-    }
 }
