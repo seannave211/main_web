@@ -1,5 +1,7 @@
+/* Atkinson Hyperlegible Next Font */
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Space+Mono&display=swap");
 
+/* General variables for the page */
 :root {
     --ff: "Atkinson Hyperlegible Next", sans-serif;
 
@@ -25,8 +27,11 @@
 
     --border-card: solid 1px var(--bg);
     --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --content-width: 800px;
+    --spacing-unit: 30px;
 }
 
+/* For all elements */
 * {
     margin: 0;
     padding: 0;
@@ -51,6 +56,9 @@ body {
     align-items: center;
     color: var(--text-muted);
     background: var(--bg-dark);
+    max-width: -webkit-calc(var(--content-width - (var(--spacing-unit) * 2)));
+    max-width: calc(var(--content-width) - (var(--spacing-unit) * 2));
+    margin-inline: auto;
 }
 
 button {
@@ -84,7 +92,7 @@ h3 {
         minmax(min(var(--grid-min-col-size), 100%), 1fr)
     );
     gap: 1rem;
-    width: 60%;
+    width: 100%;
 }
 
 .card {
