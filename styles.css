@@ -109,9 +109,13 @@ h3 {
     flex-direction: column;
     gap: 0.5rem;
     justify-content: space-between;
+    transition:
+        scale 0.2s ease,
+        background 0.2s ease;
 }
 
 .card:hover {
+    scale: 1.05;
     background: var(--gradient-hover);
 }
 
